@@ -57,8 +57,13 @@ Mobil Dibeli <br>
 
 @endforeach
 
+@if ($penjualan == 0)
+
+@elseif($penjualan > 0)
 Mobil Paling banyak dijual : {{$mobilPalingBanyakDijual->nama}}<br>
 Penjualan Hari ini : {{$penjualan}}<br>
 Total Pendapatan Hari Ini : Rp. {{$totalPendapatan}} <br>
+@endif
+
 
 
