@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Mail\SendMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class PenjualanController extends Controller
 {
@@ -64,7 +65,7 @@ class PenjualanController extends Controller
          $kirim = Mail::to($email)->send(new SendMail($nama, $namaMobil, $nomor, $harga));
         if($kirim){         echo "Email telah dikirim";     }
 
-         return dd($penjualan);
+        return Redirect()->back();
 
     }
 
